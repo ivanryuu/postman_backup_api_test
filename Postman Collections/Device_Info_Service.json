@@ -1,245 +1,165 @@
 {
-  "swagger": "2.0",
   "info": {
-    "version": "1.0",
-    "title": "Device Info Service",
-    "description": "Service that provides information regarding devices such as current configuration and SIM information through a RESTful API."
+    "_postman_id": "4353411-01202cc0-4b0d-4b4b-855a-bc7771f0cfe3",
+    "name": "Device Info Service",
+    "description": "Service that provides information regarding devices such as current configuration and SIM information through a RESTful API.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
   },
-  "host": "example.com",
-  "basePath": "/",
-  "schemes": [
-    "http"
-  ],
-  "consumes": [
-    "application/json"
-  ],
-  "produces": [
-    "application/json"
-  ],
-  "paths": {
-    "/internal/status": {
-      "get": {
-        "description": "TODO: Add Description",
-        "summary": "Status",
-        "tags": [
-          "Internal"
-        ],
-        "operationId": "InternalStatusGet",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": ""
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "security": [],
-        "x-unitTests": [
-          {
-            "request": {
-              "method": "GET",
-              "uri": "/internal/status",
-              "headers": {
-                "Content-Type": "application/json"
-              }
-            },
-            "expectedResponse": {
-              "x-allowExtraHeaders": true,
-              "x-bodyMatchMode": "NONE",
-              "x-arrayOrderedMatching": false,
-              "x-arrayCheckCount": false,
-              "x-matchResponseSchema": true,
-              "headers": {}
-            },
-            "x-testShouldPass": true,
-            "x-testEnabled": true,
-            "x-testName": "Status",
-            "x-testDescription": "TODO: Add Description"
-          }
-        ],
-        "x-operation-settings": {
-          "CollectParameters": false,
-          "AllowDynamicQueryParameters": false,
-          "AllowDynamicFormParameters": false,
-          "IsMultiContentStreaming": false
-        }
-      }
-    },
-    "/internal/version": {
-      "get": {
-        "description": "TODO: Add Description",
-        "summary": "Version",
-        "tags": [
-          "Internal"
-        ],
-        "operationId": "InternalVersionGet",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": ""
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "security": [],
-        "x-unitTests": [
-          {
-            "request": {
-              "method": "GET",
-              "uri": "/internal/version",
-              "headers": {
-                "Content-Type": "application/json"
-              }
-            },
-            "expectedResponse": {
-              "x-allowExtraHeaders": true,
-              "x-bodyMatchMode": "NONE",
-              "x-arrayOrderedMatching": false,
-              "x-arrayCheckCount": false,
-              "x-matchResponseSchema": true,
-              "headers": {}
-            },
-            "x-testShouldPass": true,
-            "x-testEnabled": true,
-            "x-testName": "Version",
-            "x-testDescription": "TODO: Add Description"
-          }
-        ],
-        "x-operation-settings": {
-          "CollectParameters": false,
-          "AllowDynamicQueryParameters": false,
-          "AllowDynamicFormParameters": false,
-          "IsMultiContentStreaming": false
-        }
-      }
-    },
-    "/devices/device_type/{device_type}/valid_serials": {
-      "post": {
-        "description": "Validates a list of serial numbers for a device type.",
-        "summary": "Retrieve valid serials",
-        "tags": [
-          "Misc"
-        ],
-        "operationId": "DevicesDeviceTypeValidSerialsByDeviceTypePost",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "postquery",
-            "in": "query",
-            "required": true,
-            "type": "boolean",
-            "description": ""
-          },
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": ""
-          },
-          {
-            "name": "Body",
-            "in": "body",
-            "required": true,
-            "description": "",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
+  "item": [
+    {
+      "_postman_id": "4353411-545c94ec-382e-46c7-bb00-dcdf6b082320",
+      "name": "Internal",
+      "description": "Provides internal information about the service such as uptime and version.",
+      "item": [
+        {
+          "_postman_id": "4353411-056c625b-9017-42a3-b1dd-0f8214293c99",
+          "name": "Status",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "b293b9d1-8f98-4c36-a2f1-e42639e10f0d",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"all successful\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    var results = jsonData.result;",
+                  "    console.log(results.length)",
+                  "    ",
+                  "});"
+                ]
               }
             }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\"4764126703\"]"
+            },
+            "url": "{{dis_url}}/internal/status"
           },
-          {
-            "name": "device_type",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": ""
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": ""
-          }
+          "response": []
         },
-        "security": [],
-        "x-unitTests": [],
-        "x-operation-settings": {
-          "CollectParameters": false,
-          "AllowDynamicQueryParameters": false,
-          "AllowDynamicFormParameters": false,
-          "IsMultiContentStreaming": false
+        {
+          "_postman_id": "4353411-5e45ef1f-1d51-4035-a816-751bfb5de81b",
+          "name": "Version",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "b293b9d1-8f98-4c36-a2f1-e42639e10f0d",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"all successful\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    var results = jsonData.result;",
+                  "    console.log(results.length)",
+                  "    ",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\"4764126703\"]"
+            },
+            "url": "{{dis_url}}/internal/version"
+          },
+          "response": []
         }
-      }
+      ]
     },
-    "/devices/device_type/{device_type}/sims": {
-      "get": {
-        "description": "Retrieves all SIM information for a device type since the last time the device reported to the unit server.",
-        "summary": "Retrieve device SIM data",
-        "tags": [
-          "Misc"
-        ],
-        "operationId": "DevicesDeviceTypeSimsByDeviceTypeGet",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
+    {
+      "_postman_id": "4353411-ce0ee118-c745-4b98-b5cf-b3b6afce87ee",
+      "name": "Retrieve valid serials",
+      "request": {
+        "method": "POST",
+        "header": [
           {
-            "name": "since_last_contact_time",
-            "in": "query",
-            "required": true,
-            "type": "string",
-            "description": ""
-          },
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": ""
-          },
-          {
-            "name": "device_type",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": ""
+            "key": "Content-Type",
+            "value": "application/json"
           }
         ],
-        "responses": {
-          "200": {
-            "description": ""
-          }
+        "body": {
+          "mode": "raw",
+          "raw": "[\"4865007451\"]\r\n"
         },
-        "security": [],
-        "x-unitTests": [],
-        "x-operation-settings": {
-          "CollectParameters": false,
-          "AllowDynamicQueryParameters": false,
-          "AllowDynamicFormParameters": false,
-          "IsMultiContentStreaming": false
-        }
-      }
+        "url": {
+          "raw": "{{dis_url}}/devices/device_type/{{device_type}}/valid_serials?postquery=true",
+          "host": [
+            "{{dis_url}}"
+          ],
+          "path": [
+            "devices",
+            "device_type",
+            "{{device_type}}",
+            "valid_serials"
+          ],
+          "query": [
+            {
+              "key": "postquery",
+              "value": "true",
+              "equals": true
+            }
+          ]
+        },
+        "description": "Validates a list of serial numbers for a device type."
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "4353411-2777a4bf-af34-466b-aaf2-c55d6eaf6852",
+      "name": "Retrieve device SIM data",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "[\"4865007451\"]\r\n"
+        },
+        "url": {
+          "raw": "{{dis_url}}/devices/device_type/{{device_type}}/sims?since_last_contact_time={{last_contact_time}}",
+          "host": [
+            "{{dis_url}}"
+          ],
+          "path": [
+            "devices",
+            "device_type",
+            "{{device_type}}",
+            "sims"
+          ],
+          "query": [
+            {
+              "key": "since_last_contact_time",
+              "value": "{{last_contact_time}}",
+              "equals": true
+            }
+          ]
+        },
+        "description": "Retrieves all SIM information for a device type since the last time the device reported to the unit server."
+      },
+      "response": []
     }
-  }
+  ]
 }
