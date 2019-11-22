@@ -30,7 +30,7 @@
         "tags": [
           "Auth: Digest"
         ],
-        "operationId": "DigestAuthGet",
+        "operationId": "DigestAuthRequest",
         "deprecated": false,
         "produces": [
           "application/json"
@@ -51,7 +51,7 @@
         "tags": [
           "Auth: Others"
         ],
-        "operationId": "BasicAuthGet",
+        "operationId": "BasicAuth",
         "deprecated": false,
         "produces": [
           "application/json; charset=utf-8"
@@ -125,7 +125,7 @@
         "tags": [
           "Auth: Others"
         ],
-        "operationId": "Oauth1Get",
+        "operationId": "OAuth1.0VerifySignature",
         "deprecated": false,
         "produces": [
           "application/json; charset=utf-8"
@@ -209,7 +209,7 @@
         "tags": [
           "Auth: Others"
         ],
-        "operationId": "AuthHawkGet",
+        "operationId": "HawkAuth",
         "deprecated": false,
         "produces": [
           "application/json"
@@ -288,7 +288,7 @@
         "tags": [
           "Cookies"
         ],
-        "operationId": "CookiesSetGet",
+        "operationId": "SetCookies",
         "deprecated": false,
         "produces": [
           "application/json; charset=utf-8"
@@ -380,7 +380,7 @@
         "tags": [
           "Cookies"
         ],
-        "operationId": "CookiesDeleteGet",
+        "operationId": "DeleteCookies",
         "deprecated": false,
         "produces": [
           "application/json; charset=utf-8"
@@ -464,7 +464,7 @@
         "tags": [
           "Cookies"
         ],
-        "operationId": "CookiesGet",
+        "operationId": "GetCookies",
         "deprecated": false,
         "produces": [
           "application/json; charset=utf-8"
@@ -540,7 +540,7 @@
         "tags": [
           "Headers"
         ],
-        "operationId": "HeadersGet",
+        "operationId": "RequestHeaders",
         "deprecated": false,
         "produces": [
           "application/json; charset=utf-8"
@@ -633,7 +633,7 @@
         "tags": [
           "Headers"
         ],
-        "operationId": "ResponseHeadersGet",
+        "operationId": "ResponseHeaders",
         "deprecated": false,
         "produces": [
           "text/html; charset=utf-8"
@@ -727,7 +727,7 @@
         "tags": [
           "Request Methods"
         ],
-        "operationId": "GetGet",
+        "operationId": "GETRequest",
         "deprecated": false,
         "produces": [
           "application/json"
@@ -757,7 +757,7 @@
         "tags": [
           "Request Methods"
         ],
-        "operationId": "PostPost",
+        "operationId": "POSTRequest",
         "deprecated": false,
         "produces": [
           "application/json"
@@ -786,7 +786,7 @@
         "tags": [
           "Request Methods"
         ],
-        "operationId": "PutPut",
+        "operationId": "PUTRequest",
         "deprecated": false,
         "produces": [
           "application/json"
@@ -807,7 +807,7 @@
         "tags": [
           "Request Methods"
         ],
-        "operationId": "PatchPatch",
+        "operationId": "PATCHRequest",
         "deprecated": false,
         "produces": [
           "application/json"
@@ -828,7 +828,7 @@
         "tags": [
           "Request Methods"
         ],
-        "operationId": "DeleteDelete",
+        "operationId": "DELETERequest",
         "deprecated": false,
         "produces": [
           "application/json"
@@ -849,7 +849,7 @@
         "tags": [
           "Utilities"
         ],
-        "operationId": "Status200Get",
+        "operationId": "ResponseStatusCode",
         "deprecated": false,
         "produces": [
           "application/json; charset=utf-8"
@@ -923,7 +923,7 @@
         "tags": [
           "Utilities"
         ],
-        "operationId": "Stream10Get",
+        "operationId": "StreamedResponse",
         "deprecated": false,
         "produces": [
           "application/json"
@@ -944,7 +944,7 @@
         "tags": [
           "Utilities"
         ],
-        "operationId": "Delay3Get",
+        "operationId": "DelayResponse",
         "deprecated": false,
         "produces": [
           "application/json; charset=utf-8"
@@ -1018,7 +1018,7 @@
         "tags": [
           "Utilities"
         ],
-        "operationId": "EncodingUtf8Get",
+        "operationId": "GetUTF8EncodedResponse",
         "deprecated": false,
         "produces": [
           "application/json"
@@ -1039,7 +1039,7 @@
         "tags": [
           "Utilities"
         ],
-        "operationId": "GzipGet",
+        "operationId": "GZipCompressedResponse",
         "deprecated": false,
         "produces": [
           "application/json"
@@ -1060,7 +1060,7 @@
         "tags": [
           "Utilities"
         ],
-        "operationId": "DeflateGet",
+        "operationId": "DeflateCompressedResponse",
         "deprecated": false,
         "produces": [
           "application/json"
