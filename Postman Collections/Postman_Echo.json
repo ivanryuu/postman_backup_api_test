@@ -9,7 +9,7 @@
   "host": "echo.getpostman.com",
   "basePath": "/",
   "securityDefinitions": {
-    "auth": {
+    "basic": {
       "type": "basic"
     }
   },
@@ -99,7 +99,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "basic": []
+          }
+        ]
       }
     },
     "/oauth1": {
@@ -1182,11 +1187,7 @@
       ]
     }
   },
-  "security": [
-    {
-      "auth": []
-    }
-  ],
+  "security": [],
   "tags": [
     {
       "name": "Auth: Digest",
